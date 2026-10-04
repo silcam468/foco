@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Foco</string>
+    <string name="accessibility_description">Detecta cuándo abrís una app que elegiste bloquear y te devuelve a la pantalla de inicio mientras la concentración está activa. No lee el contenido de tu pantalla.</string>
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#F7F5FA" android:fillViewport="true" android:fitsSystemWindows="true">
+
+<LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:padding="20dp">
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Foco" android:textSize="34sp" android:textStyle="bold" android:textColor="#222222" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Tu espacio para concentrarte." android:textSize="16sp"
+        android:textColor="#666666" android:layout_marginBottom="16dp" />
+
+    <!-- Aviso de permiso (se oculta cuando ya está activado) -->
+    <LinearLayout android:id="@+id/permCard" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" android:padding="18dp"
+        android:background="@drawable/card_warn" android:layout_marginBottom="16dp">
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Falta activar un permiso" android:textSize="17sp" android:textStyle="bold" android:textColor="#222222" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="4dp" android:textSize="14sp" android:textColor="#444444"
+            android:text="Foco usa el servicio de Accesibilidad solo para saber qué app abrís y mandarte al inicio si está bloqueada. No lee ni guarda lo que ves en pantalla.\n\nEn Ajustes de Accesibilidad buscá Foco (puede estar en 'Apps instaladas') y activalo.\n\nSi el interruptor aparece en gris: Ajustes → Aplicaciones → Foco → menú ⋮ → 'Permitir ajustes restringidos'." />
+        <Button android:id="@+id/accessibilityButton" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginTop="10dp"
+            android:text="Abrir ajustes de Accesibilidad" android:textAllCaps="false" />
+    </LinearLayout>
+
+    <!-- Estado -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="18dp" android:background="@drawable/card">
+        <TextView android:id="@+id/status" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="15sp" android:textStyle="bold" android:textColor="#6750A4" />
+        <TextView android:id="@+id/timer" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="26sp" android:textStyle="bold" android:textColor="#222222" android:layout_marginTop="6dp" />
+        <Button android:id="@+id/focusButton" android:layout_width="match_parent" android:layout_height="52dp"
+            android:layout_marginTop="14dp" android:textAllCaps="false" android:textSize="16sp" />
+        <Button android:id="@+id/timeButton" android:layout_width="match_parent" android:layout_height="48dp"
+            android:layout_marginTop="8dp" android:textAllCaps="false" />
+        <Switch android:id="@+id/strictSwitch" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Modo estricto" android:textSize="16sp" android:layout_marginTop="12dp" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Con el modo estricto no podés terminar antes de tiempo ni cambiar apps u horarios mientras la concentración está activa. No aplica si elegís 'Sin límite'."
+            android:textSize="12sp" android:textColor="#777777" />
+        <TextView android:id="@+id/blocksCount" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="#777777" android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Horarios automáticos -->
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Horarios automáticos" android:textSize="22sp" android:textStyle="bold"
+        android:textColor="#222222" android:layout_marginTop="26dp" />
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Foco se activa y se desactiva solo en los días y horas que elijas."
+        android:textSize="13sp" android:textColor="#666666" />
+    <LinearLayout android:id="@+id/schedulesBox" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="6dp" />
+    <Button android:id="@+id/addScheduleButton" android:layout_width="match_parent"
+        android:layout_height="48dp" android:text="+ Agregar horario" android:textAllCaps="false" />
+
+    <!-- Apps -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="26dp">
+        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:text="Apps a bloquear" android:textSize="22sp" android:textStyle="bold" android:textColor="#222222" />
+        <TextView android:id="@+id/selectedCount" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:textSize="13sp" android:textColor="#666666" />
+    </LinearLayout>
+    <EditText android:id="@+id/search" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Buscar una app…" android:inputType="text" android:singleLine="true" android:layout_marginTop="8dp" />
+    <LinearLayout android:id="@+id/appsBox" android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="4dp" />
+</LinearLayout>
+</ScrollView>
